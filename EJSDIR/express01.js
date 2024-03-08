@@ -1,12 +1,14 @@
 const express = require("express")
 const app = express();
+const path = require("path");
 
 let port = 8080;
 
 app.set("view engine", "ejs");
+// app.set("view", path.join(__dirname, "/views"));
 
 app.get("/", (req, res) => {
-    res.render("C:\Learning_Backend\EJSDIR\views\home.ejs");
+    res.render("home.ejs");
 });
 
 

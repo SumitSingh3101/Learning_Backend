@@ -16,13 +16,16 @@ app.get("/ig/:username",(req, res) => {
     const instaData = require("./data.json");
     const data = instaData[username];
     console.log(data);
-    res.render("instagram.ejs", {data: instaData[username]});
+    if(data){
+    res.render("instagram.ejs", {data: instaData[username]});}
+    else{res.render("NoPage.ejs", {username});}
 });
 
 
 app.listen(port, () => {
     console.log(`app is listening on port ${port}`);
 });
+
 
 // app.use((req, res) => {
 //     console.log("request received");
